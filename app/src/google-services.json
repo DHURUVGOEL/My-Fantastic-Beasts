@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "558158342384",
+    "project_id": "my-fantastic-beasts-5490f",
+    "storage_bucket": "my-fantastic-beasts-5490f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558158342384:android:1f75263442a7750b3efa35",
+        "android_client_info": {
+          "package_name": "com.example.myfantasticbeasts"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "558158342384-bep60u1cno5tglvfcrjbv63tnmg4okhh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBveIio4IM9G3-l_kKByiF0lv-Duaa476k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "558158342384-bep60u1cno5tglvfcrjbv63tnmg4okhh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

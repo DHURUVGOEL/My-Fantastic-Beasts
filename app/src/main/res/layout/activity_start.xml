@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/match_constraint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/start_bg"
+    tools:context=".StartActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="-8dp">
+
+    <TextView
+        android:id="@+id/namemfb"
+        android:layout_width="174dp"
+        android:layout_height="174dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
+        android:accessibilityLiveRegion="none"
+        android:fontFamily="@font/promptregular"
+        android:lineSpacingExtra="0sp"
+        android:text="@string/namemfb"
+        android:textColor="#FFFEE9"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.131"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/startinfo"
+        android:layout_width="257dp"
+        android:layout_height="39dp"
+        android:fontFamily="@font/prompt"
+        android:text="@string/startinfo"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.242"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/namemfb" />
+
+    <Button
+        android:id="@+id/stbtn_login"
+        android:layout_width="303dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="376dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/stbtn_bg_login"
+        android:fontFamily="@font/promptregular"
+        android:padding="5dp"
+        android:text="@string/btn_login"
+        android:textAlignment="gravity"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        app:backgroundTint="#B0FFFEE9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startinfo" />
+
+    <Button
+        android:id="@+id/stbin_register"
+        android:layout_width="303dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/stbtn_bg_reg"
+        android:fontFamily="@font/promptmedium"
+        android:padding="5dp"
+        android:text="@string/text_REG"
+        android:textAlignment="gravity"
+        android:textColor="#FFFEE9"
+        android:textSize="20sp"
+        app:backgroundTint="#45FFFEE9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stbtn_login"
+        app:layout_constraintVertical_bias="0.104" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
