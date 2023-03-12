@@ -1,10 +1,11 @@
 package com.example.myfantasticbeasts
 
 import androidx.lifecycle.LiveData
+import kotlinx.coroutines.flow.Flow
 
 class AnimalRepository (private val animalDao: AnimalDao){
 
-    val allAnimals: LiveData<List<Animals>> = animalDao.getAlphabetizedAnimals()
+    val allAnimals: Flow<List<Animals>> = animalDao.getAlphabetizedAnimals()
     suspend fun insert(animals: Animals){
         animalDao.insert(animals)
     }

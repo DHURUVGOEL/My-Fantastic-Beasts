@@ -3,6 +3,7 @@ package com.example.myfantasticbeasts
 
 
 import androidx.room.*
+import kotlinx.coroutines.flow.Flow
 
 
 @Dao
@@ -13,7 +14,7 @@ interface AnimalDao {
 
 
     @Query("Select * from animal_table order by id ASC")
-    fun getAlphabetizedAnimals(): kotlinx.coroutines.flow.Flow<List<Animals>>
+    fun getAlphabetizedAnimals(): Flow<List<Animals>>
 
     @Delete
     suspend fun delete(animals: Animals)

@@ -12,23 +12,19 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
+import com.example.myfantasticbeasts.databinding.FragmentAnimalsBinding
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 class AnimalsFragment : Fragment(), ItemsItemClicked {
 
     private lateinit var recyclerView: RecyclerView
-     private lateinit var viewModel: AnimalViewModel
+
 
      override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-
-//         ViewModelProvider(this,
-//             ViewModelProvider.AndroidViewModelFactory.getInstance(application:Application)).get(AnimalViewModel::class.java)
-//             .also { viewModel = it }
-
+    ): View {
 
 
 //        { item ->
@@ -41,6 +37,7 @@ class AnimalsFragment : Fragment(), ItemsItemClicked {
 
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_animals, container, false)
+
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = GridLayoutManager(context , 3) // Set grid layout with 2 columns
 

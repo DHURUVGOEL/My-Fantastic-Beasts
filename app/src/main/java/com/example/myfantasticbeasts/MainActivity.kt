@@ -3,23 +3,24 @@ package com.example.myfantasticbeasts
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.viewpager2.widget.ViewPager2
-import com.android.car.ui.toolbar.TabLayout
+import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var tabLayout: TabLayout
-    private lateinit var viewPager: ViewPager2
+    private lateinit var viewPager2: ViewPager2
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         tabLayout = findViewById(R.id.tabLayout)
-        viewPager = findViewById(R.id.viewPager2)
-        val adapter = FragmentAdapter(supportFragmentManager,lifecycle)
-        viewPager.adapter = adapter
+        viewPager2 = findViewById(R.id.viewPager2)
 
-        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+        val adapter = FragmentAdapter(supportFragmentManager,lifecycle)
+        viewPager2.adapter = adapter
+         TabLayoutMediator(tabLayout, viewPager2) {tab, position ->
             tab.text = when (position) {
                 0 -> {
                     "Animals"
@@ -34,7 +35,9 @@ class MainActivity : AppCompatActivity() {
                     "Animals"
                 }
             }
-        }.attach()
+}.attach()
+
+
     }
 }
 //    private fun setupTabLayout(){
