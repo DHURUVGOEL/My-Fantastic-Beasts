@@ -2,63 +2,81 @@
 package com.example.myfantasticbeasts
 
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.OnCreateContextMenuListener
+
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
+
+
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myfantasticbeasts.databinding.FragmentAnimalsBinding
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
-class AnimalsFragment : Fragment(), ItemsItemClicked {
+class AnimalsFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
-
-
+    private  lateinit var floatingActionButton: FloatingActionButton
+    lateinit var name : Array<String>
+    private lateinit var items: ArrayList<Animaldata>
      override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View?{
 
-
-//        { item ->
-//            // Handle item click event here
-//            val intent = Intent(activity, MainActivity::class.java)
-//            intent.putExtra("item", item)
-//            startActivity(intent)
-//        }
-//         Initialize RecyclerView and its adapter
+           name = arrayOf("Cheetah","Monkey","Lion","Cape Lion","Asian Elephant","Arctic Fox",
+               "American Foxhound","Deer"
+           )
 
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_animals, container, false)
 
+         floatingActionButton = view.findViewById(R.id.floatingActionButton)
+         floatingActionButton.setOnClickListener{
+             val intent = Intent(context ,ListActivity::class.java)
+             startActivity(intent)
+         }
+
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = GridLayoutManager(context , 3) // Set grid layout with 2 columns
 
-        val items = fetchData()
-        val adapter = ItemListAdapter(items,this)
+//        val items = fetchData()
+               items=ArrayList()
+
+         items.add(Animaldata("Cheetah"))
+         items.add(Animaldata("Monkey"))
+         items.add(Animaldata("Lion"))
+         items.add(Animaldata("Cape Lion"))
+         items.add(Animaldata("Asian Elephant"))
+         items.add(Animaldata("Arctic Fox"))
+         items.add(Animaldata("American Foxhound"))
+         items.add(Animaldata("Deer"))
+
+         val adapter = ItemListAdapter(items)
         recyclerView.adapter= adapter
         return view
 
     }
     // Sample data
-    private fun fetchData(): ArrayList<String> {
-        val list = ArrayList<String>()
-        for(i in 0 until 100){
-            list.add("Item $i")
-        }
-        return list
-    }
 
-    override fun OnItemClicked(item: String) {
-        Toast.makeText(context,"Clicked item is $item ",Toast.LENGTH_SHORT).show()
-    }
+//    private fun fetchData(): ArrayList<String> {
+//        val list = ArrayList<String>()
+//        for(i in name.indices){
+//            val animal = Animaldata(name)
+//            list.add(animal)
+//        }
+//        return list
+//    }
+
+//    override fun OnItemClicked(item: String) {
+//
+//        Toast.makeText(context,"Clicked item is $item ",Toast.LENGTH_SHORT).show()
+//
+//    }
 
 }
 
